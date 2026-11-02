@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#100d27">
+  <meta name="description" content="Campus Clash — quiz battles, word games, brain teasers and 1v1 duels for university students. Think Fast. Play Smart. Own the Campus.">
+  <meta property="og:title" content="Campus Clash — Own the Campus">
+  <meta property="og:description" content="7 games. One campus leaderboard. Challenge your friends.">
+  <meta property="og:image" content="icons/icon-512.png">
+  <title>Campus Clash | Own the Campus</title>
+  <link rel="manifest" href="manifest.json">
+  <link rel="icon" href="icons/icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="icons/icon-192.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar" id="sidebar">
+      <a class="brand" href="#home"><span class="brand-mark">⚡</span><span> CAMPUS<span class="brand-accent">CLASH</span><small>THINK FAST. PLAY SMART.</small></span></a>
+      <div class="campus-pill"><span class="live-dot"></span> CAMPUS ARENA <b>LIVE</b></div>
+      <nav class="nav">
+        <div class="nav-label">PLAY</div>
+        <button class="nav-item active" data-action="go" data-arg="home"><span>⌂</span> Overview</button>
+        <button class="nav-item" data-action="go" data-arg="games"><span>🎮</span> Game Arena</button>
+        <button class="nav-item" data-action="go" data-arg="daily"><span>☀</span> Daily Hub <i class="nav-dot hidden" id="dailyDot"></i></button>
+        <button class="nav-item" data-action="go" data-arg="tournaments"><span>🏆</span> Tournaments</button>
+        <div class="nav-label">COMMUNITY</div>
+        <button class="nav-item" data-action="go" data-arg="leaderboard"><span>♛</span> Leaderboard</button>
+        <button class="nav-item" data-action="go" data-arg="profile"><span>◉</span> My Profile</button>
+        <button class="nav-item" data-action="go" data-arg="store"><span>🛍</span> Store <i class="nav-new">PRO</i></button>
+        <div class="nav-label">BUSINESS</div>
+        <button class="nav-item" data-action="go" data-arg="partners"><span>🤝</span> Partners</button>
+        <button class="nav-item" data-action="go" data-arg="admin"><span>⚙</span> Admin Studio</button>
+      </nav>
+      <div class="sidebar-bottom">
+        <div class="mini-profile" data-action="go" data-arg="profile"><div id="sideAvatarWrap"></div><div><b id="sideName">Player</b><small id="sideDept"></small></div><span class="tag pro hidden" id="proBadgeTop">PRO</span></div>
+        <button class="help-link" data-action="howToPlay">ⓘ &nbsp; How to play</button>
+      </div>
+    </aside>
+    <div class="scrim" id="scrim"></div>
+
+    <main class="main">
+      <header class="topbar">
+        <button class="mobile-menu" data-action="menu" aria-label="Open menu">☰</button>
+        <div class="breadcrumb"><span>ARENA</span><b>/</b><strong id="pageName">Overview</strong></div>
+        <div class="top-actions">
+          <div class="pill streak" title="Day streak"><span>🔥</span><b id="streakTop">0</b><small>STREAK</small></div>
+          <button class="pill energy" data-action="energyInfo" title="Energy"><span>⚡</span><b id="energyTop">5/5</b><small id="energyTimer">FULL</small></button>
+          <button class="pill coin" data-action="store" data-arg="powerups" title="Coins"><span>🪙</span><b id="coinTop">0</b><small>COINS</small></button>
+          <button class="pill gem" data-action="store" data-arg="featured" title="Gems"><span>💎</span><b id="gemTop">0</b><small>GEMS</small></button>
+          <button class="btn btn-pro btn-small" id="proTop" data-action="store" data-arg="featured">GO PRO</button>
+        </div>
+      </header>
+      <div class="content" id="content"></div>
+      <footer>© 2026 CAMPUS CLASH <span>•</span> FREE TO PLAY · SKILL DECIDES <span class="footer-right">V2.0</span></footer>
+    </main>
+  </div>
+
+  <nav class="bottom-nav">
+    <button data-action="go" data-arg="home"><span>⌂</span>Home</button>
+    <button data-action="go" data-arg="games"><span>🎮</span>Play</button>
+    <button data-action="go" data-arg="daily"><span>☀</span>Daily</button>
+    <button data-action="go" data-arg="leaderboard"><span>♛</span>Ranks</button>
+    <button data-action="go" data-arg="store"><span>🛍</span>Store</button>
+  </nav>
+
+  <div class="modal-backdrop hidden" id="modal">
+    <section class="modal" role="dialog" aria-modal="true">
+      <button class="modal-close" id="modalClose" aria-label="Close">×</button>
+      <div id="modalBody"></div>
+    </section>
+  </div>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script src="config.js"></script>
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

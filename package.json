@@ -1,0 +1,10 @@
+{
+  "name": "campus-clash",
+  "version": "2.0.0",
+  "description": "Campus Clash — multi-game competitive platform for university students",
+  "private": true,
+  "scripts": {
+    "start": "node server/server.js"
+  },
+  "engines": { "node": ">=18" }
+}
